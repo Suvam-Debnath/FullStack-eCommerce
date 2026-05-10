@@ -1,3 +1,18 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: backend
+  datasource:
+    url: ${DB_URL}  #DB name:FullStackEcom
+    username: ${DB_USER}
+    password: ${DB_PWD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
