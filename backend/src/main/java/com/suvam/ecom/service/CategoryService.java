@@ -1,14 +1,14 @@
 package com.suvam.ecom.service;
 
-import com.suvam.ecom.model.Category;
-
-import java.util.List;
+import com.suvam.ecom.payload.CategoryDTO;
+import com.suvam.ecom.payload.CategoryResponse;
 
 public interface CategoryService {
-    List<Category> getAllCategories();
-    void createCategory(Category category);
+    CategoryResponse getAllCategories(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
 
-    String deleteCategory(Long categoryId);
+    CategoryDTO createCategory(CategoryDTO categoryDTO);
 
-    Category updateCategory(Category category, Long categoryId);
+    CategoryDTO deleteCategory(Long categoryId);
+
+    CategoryDTO updateCategory(CategoryDTO categoryDTO, Long categoryId);
 }
