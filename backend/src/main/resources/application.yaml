@@ -4,17 +4,33 @@ server:
 spring:
   application:
     name: backend
+
   datasource:
-    url: ${DB_URL}  #DB name:FullStackEcom
+    url: ${DB_URL}   # DB name: FullStackEcom
     username: ${DB_USER}
     password: ${DB_PWD}
+
   jpa:
     hibernate:
       ddl-auto: update
+
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+
     show-sql: true
+
+  app:
+    jwtSecret: mySecretKey123912738aopsgjnspkmndfsopkvajoirjg94gf2opfng2moknm
+    jwtExpirationMs: 3000000
+
+logging:
+  level:
+    org.springframework: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.springframework.security: DEBUG
+    com.suvam.ecom: DEBUG
+
 project:
   image: images/
