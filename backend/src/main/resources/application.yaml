@@ -6,24 +6,26 @@ spring:
     name: backend
 
   datasource:
-    url: ${DB_URL}   # DB name: FullStackEcom
+    url: ${DB_URL}
     username: ${DB_USER}
     password: ${DB_PWD}
 
   jpa:
     hibernate:
       ddl-auto: update
-
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
-
     show-sql: true
 
   app:
     jwtSecret: mySecretKey123912738aopsgjnspkmndfsopkvajoirjg94gf2opfng2moknm
     jwtExpirationMs: 3000000
+
+  ecom:
+    app:
+      jwtCookieName: springBootEcom
 
 logging:
   level:
