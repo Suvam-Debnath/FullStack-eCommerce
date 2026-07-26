@@ -1,0 +1,18 @@
+import { configureStore } from "@reduxjs/toolkit";
+import { productReducer } from "./ProductReducer";
+
+export const store = configureStore({
+    reducer: {
+         products: productReducer,
+        // errors: errorReducer,
+        // carts: cartReducer,
+        // auth: authReducer,
+        // payment: paymentMethodReducer,
+        // admin: adminReducer,
+        // order: orderReducer,
+        // seller: sellerReducer,
+    },
+    preloadedState: {},
+});
+
+export default store;

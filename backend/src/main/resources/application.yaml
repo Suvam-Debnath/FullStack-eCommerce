@@ -36,3 +36,6 @@ spring:
 
 project:
   image: images/
+
+frontend:
+  url: http://localhost:5173/
