@@ -5,13 +5,12 @@ import { IoIosMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-//import Cart from './components/cart/Cart'
 //import UserMenu from "../UserMenu";
 
 const Navbar = () => {
     const path = useLocation().pathname;
     const [navbarOpen, setNavbarOpen] = useState(false);
-    //const { cart } = useSelector((state) => state.carts);
+    const { cart } = useSelector((state) => state.carts);
     //const { user } = useSelector((state) => state.auth);
     
     return (
@@ -62,7 +61,7 @@ const Navbar = () => {
                    </Link> 
                 </li>
 
-                {/* <li className="font-medium transition-all duration-150">
+                <li className="font-medium transition-all duration-150">
                    <Link className={`${
                     path === "/cart" ? "text-white font-semibold" : "text-gray-200"
                    }`}
@@ -76,7 +75,7 @@ const Navbar = () => {
                                 <FaShoppingCart size={25} />
                         </Badge>
                    </Link> 
-                </li> */}
+                </li>
 
                 {/* {(user && user.id) ? (
                     <li className="font-medium transition-all duration-150">
