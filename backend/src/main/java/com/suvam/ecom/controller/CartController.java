@@ -2,6 +2,7 @@ package com.suvam.ecom.controller;
 
 import com.suvam.ecom.model.Cart;
 import com.suvam.ecom.payload.CartDTO;
+import com.suvam.ecom.payload.CartItemDTO;
 import com.suvam.ecom.repositories.CartRepository;
 import com.suvam.ecom.service.CartService;
 import com.suvam.ecom.util.AuthUtil;
@@ -23,6 +24,12 @@ public class CartController {
 
     @Autowired
     private CartService cartService;
+
+    @PostMapping("/cart/create")
+    public ResponseEntity<String> createOrUpdateCart(@RequestBody List<CartItemDTO> cartItems){
+        String response = cartService.createOrUpdateCartWithItems(cartItems);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
 
     @PostMapping("/carts/products/{productId}/quantity/{quantity}")
     public ResponseEntity<CartDTO> addProductToCart(@PathVariable Long productId,

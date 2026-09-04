@@ -5,11 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserAddresses } from "../../store/actions";
 import toast from "react-hot-toast";
 import Skeleton from "../shared/Skeleton";
-//import ErrorPage from "../shared/ErrorPage";
-//import PaymentMethod from "./PaymentMethod";
-//import OrderSummary from "./OrderSummary";
-//import StripePayment from "./StripePayment";
-//import PaypalPayment from "./PaypalPayment";
+import ErrorPage from "../shared/ErrorPage";
+import PaymentMethod from "./PaymentMethod";
+import OrderSummary from "./OrderSummary";
+import StripePayment from "./StripePayment";
+import PaypalPayment from "./PaypalPayment";
+
 
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -19,7 +20,7 @@ const Checkout = () => {
   const { address, selectedUserCheckoutAddress } = useSelector(
     (state) => state.auth,
   );
-  //const { paymentMethod } = useSelector((state) => state.payment);
+  const { paymentMethod } = useSelector((state) => state.payment);
 
   const handleBack = () => {
     setActiveStep((prevStep) => prevStep - 1);
@@ -120,7 +121,7 @@ const Checkout = () => {
         )}
       </div>
 
-      {/* {errorMessage && <ErrorPage message={errorMessage} />} */}
+      {errorMessage && <ErrorPage message={errorMessage} />}
     </div>
   );
 };
