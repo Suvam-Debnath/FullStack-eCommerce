@@ -42,3 +42,7 @@ frontend:
 image:
   base:
     url: http://localhost:8081/images
+
+stripe:
+  secret:
+    key: ${STRIPE_SECRET_KEY}
